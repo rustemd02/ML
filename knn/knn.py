@@ -63,7 +63,6 @@ def find_optimal_k(train_sample, test_sample):
     for k in range(1, 21):
         correct_predictions = 0
 
-        # вычисляем расстояние между каждым элементов тестовой и обучающей выборки
         for test_item in test_sample:
             distances = []
             for train_item in train_sample:
@@ -82,7 +81,7 @@ def find_optimal_k(train_sample, test_sample):
                     else:
                         class_counts[class_of_neighbor] = 1
 
-                predicted_class = max(class_counts, key=class_counts.get) #класс с наибольшим колвом соседей
+                predicted_class = max(class_counts, key=class_counts.get)
 
                 if predicted_class == test_item[-1]:
                     correct_predictions += 1
